@@ -11,58 +11,13 @@
             margin-left: calc(-20px);
             margin-right: calc(-20px);
         }
-
-        .main-info-text {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .main-info-box {
-            margin-top: 40px;
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .info-box-detail {
-            border-top: 2px solid black;
-            width: 303px;
-            text-align: left;
-            margin-right: 70px;
-        }
-
-        .info-box-detail > .title{
-            font-size : 2.0rem;
-            font-family: 'SpoqaHanSans';
-            font-weight: 700;
-        }
     </style>
 </head>
 
 <body>
-    <%- include('navbar', {active: "none"}); %>
+    <%- include('navbar'); %>
     <main>
-        <img src="images/sub_main.jpg" alt="">
-        <!-- <div class="main-info-text">
-            <span class="NotoSans bold h1-like">의약 부외품 전문유통 팜스랜드</span>
-            <p class="spoqaHanSan regular h3-like">의약부외품을 넘어 의약품, 그리고 수출입.<br>더욱 발전하는 약국 시장의 선두자 <span
-                    class="spoqaHanSan bold h3-like">팜스랜드</span></p>
-        </div> -->
-        <article class="main-info-box">
-            <div class="info-box-detail"> <br>
-                <span class="title">대표 고객센터</span>
-                <p class="h5-like">041)522-2002<br>평일 09시~18시<br>공휴일 휴무</p>
-            </div>
-            <div class="info-box-detail"> <br>
-                <span class="title">대표 고객센터</span>
-                <p class="h5-like">041)522-2002<br>평일 09시~18시<br>공휴일 휴무</p>
-            </div>
-            <div class="info-box-detail"> <br>
-                <span class="title">대표 고객센터</span>
-                <p class="h5-like">041)522-2002<br>평일 09시~18시<br>공휴일 휴무</p>
-            </div>
-        </article>
+        <img src="images/main.jpg" alt="">
     </main>
 </body>
 
