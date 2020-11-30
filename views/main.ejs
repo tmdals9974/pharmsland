@@ -6,10 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팜스랜드</title>
     <style>
-        img {
+        main>img {
             width: calc(100% + 40px);
             margin-left: calc(-20px);
             margin-right: calc(-20px);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub-container {
+            width: 1200px;
+        }
+
+        .quick-menu-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin: 99px 0;
+        }
+
+        .quick-menu-container>article {
+            width: 269px;
+            height: 207px;
+            background-color: #4d4d4d;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .quick-menu-container>article>img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .introduce-container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+        }
+
+        .introduce-container>article {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            margin-bottom: 142px;
+        }
+
+        .introduce-container>article>img {
+            width: 767px;
+            height: 509px;
+        }
+
+        .introduce-container>article>.introduce {
+            display: flex;
+            flex-flow: column nowrap;
+            align-self: flex-end;
+            margin-right: 25px;
+        }
+
+        .logo-container {
+            -ms-user-select: none;
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+
+        .logo-container>img {
+            width: 240px;
+            margin-right: 31px;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 6px;
+            margin-bottom: 80px;
+            cursor: pointer;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .map-container {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            background-color: #f5f5f5;
+            padding: 55px 0;
+        }
+
+        .map-container #map {
+            width: 580px;
+            height: 384px;
+            margin-right: 32px;
+        }
+
+        .map-container>.info {
+            display: flex;
+            flex-flow: column nowrap;
+            align-self: flex-end;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -18,7 +132,132 @@
     <%- include('navbar'); %>
     <main>
         <img src="images/main.jpg" alt="">
+
+        <div class="container">
+            <div class="sub-container">
+                <section class="quick-menu-container">
+                    <article>
+                        <img src="images/회사소개.svg" alt="">
+                        <span class="spoqaHanSans bold fontsize24">회사 소개</span>
+                        <span class="montserrat semi-bold fontsize20">Introduction</span>
+                    </article>
+                    <article>
+                        <img src="images/사업영역.svg" alt="">
+                        <span class="spoqaHanSans bold fontsize24">사업 영역</span>
+                        <span class="montserrat semi-bold fontsize20">Business Line</span>
+                    </article>
+                    <article>
+                        <img src="images/문의.svg" alt="">
+                        <span class="spoqaHanSans bold fontsize24">1 : 1 문의</span>
+                        <span class="montserrat semi-bold fontsize20">Q & A</span>
+                    </article>
+                    <article>
+                        <img src="images/온라인스토어.svg" alt="">
+                        <span class="spoqaHanSans bold fontsize24">온라인 스토어</span>
+                        <span class="montserrat semi-bold fontsize20">Online Store</span>
+                    </article>
+                </section>
+
+                <section class="introduce-container">
+                    <article>
+                        <img src="images/1.png" alt="">
+                        <div class="introduce">
+                            <span class="montserrat bold fontsize40"
+                                style="margin-bottom: 22px;">Pharmacy<br>Distribution</span>
+                            <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">약국 유통</span>
+                            <span class="spoqaHanSans regular fontsize20">최고의 제품과 우수한 마케팅 능력을<br>
+                                바탕으로 의약부외품을 컨설팅 공급하는<br>
+                                약국의 든든한 파트너, 팜스랜드</span>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="introduce">
+                            <span class="montserrat bold fontsize40"
+                                style="margin-bottom: 22px;">OEM<br>Production</span>
+                            <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">OEM 생산</span>
+                            <span class="spoqaHanSans regular fontsize20">고객 목소리에 귀를 귀울여 고객 니즈에<br>
+                                최적화된 경쟁력있는 최고의 제품을<br>
+                                생산하는 고객만족도 100% 팜스랜드</span>
+                        </div>
+                        <img src="images/2.png" alt="">
+                    </article>
+
+                    <article>
+                        <img src="images/3.png" alt="">
+                        <div class="introduce">
+                            <span class="montserrat bold fontsize40" style="margin-bottom: 22px;">Online Store</span>
+                            <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">온라인 스토어</span>
+                            <span class="spoqaHanSans regular fontsize20">플랫폼 시대의 약국 혁신,<br>
+                                변화하는 시대에 발 맞춰가는<br>
+                                발빠른 선두자, 팜스랜드</span>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <section class="map-container">
+            <div id="map"> </div>
+            <div class="info">
+                <span class="spoqaHanSans bold fontsize32">팜스랜드 고객센터</span>
+                <span class="montserrat semi-bold fontsize24">Tel. 041 - 522 - 4002</span>
+                <span class="montserrat medium fontsize20"><br>Fax. 041 - 909 - 4002</span>
+                <span class="montserrat medium fontsize20">Email. pharmsland365@naver.com</span>
+                <span class="spoqaHanSans regular fontsize20">주소. 충남 천안시 동남구 쉼 1길 20(구성동) 팜스랜드</span>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="sub-container">
+                <section class="logo-container">
+                    <i class="arrow left" onclick="move(-1)"></i>
+                    <img name="logos" src="" alt="">
+                    <img name="logos" src="" alt="">
+                    <img name="logos" src="" alt="">
+                    <img name="logos" src="" alt="">
+                    <i class="arrow right" onclick="move(1)"></i>
+                </section>
+            </div>
+        </div>
     </main>
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>
+    <script>
+        const logos = document.getElementsByName('logos');
+        const logoLength = logos.length;
+        const companys = ['3life', 'green', 'kirin', 'nasara', 'oralB', 'sewha', 'taeyang', 'taylor', 'wellbeing',
+            'wellbeing2'
+        ]
+        let now = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let index = 0; index < logoLength; index++) {
+                logos[index].src = 'images/logo/' + companys[index] + '.jpg';
+            }
+        });
+
+        function move(step) {
+            if (now + step < 0 || (now + step + logoLength) == companys.length + 1) return;
+            now += step;
+
+            for (let index = 0; index < logoLength; index++) {
+                logos[index].src = 'images/logo/' + companys[index + now] + '.jpg';
+            }
+        }
+
+        const pharmsGPS = new naver.maps.LatLng(36.79015038247792, 127.17208649658916);
+        var map = new naver.maps.Map('map', {
+            center: pharmsGPS,
+            zoom: 18,
+            zoomControl: true,
+        });
+
+        var marker = new naver.maps.Marker({
+            position: pharmsGPS,
+            map: map
+        });
+    </script>
 </body>
 
 </html>

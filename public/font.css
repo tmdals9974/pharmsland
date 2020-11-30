@@ -1,41 +1,3 @@
-/* Noto Sans */
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    src: url('fonts/NotoSansKR/NotoSansKR-Light.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/NotoSansKR/NotoSansKR-Regular.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    src: url('fonts/NotoSansKR/NotoSansKR-Medium.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-    src: url('fonts/NotoSansKR/NotoSansKR-Bold.otf') format('opentype');
-}
-
-
-/* Kanit */
-@font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-weight: 600;
-    src: url('fonts/Kanit/Kanit-SemiBold.ttf') format('truetype');
-}
-
 /* SpoqaHanSans */
 @font-face {
     font-family: 'SpoqaHanSans';
@@ -51,12 +13,65 @@
     src: url('fonts/SpoqaHanSans/SpoqaHanSans-Bold.ttf') format('truetype');
 }
 
-html {
-    font-size: 62.5%;
+/* Montserrat */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 100;
+    src: url('fonts/Montserrat/Montserrat-Thin.ttf') format('truetype');
 }
 
-.kanit {
-    font-family: 'Kanit';
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 200;
+    src: url('fonts/Montserrat/Montserrat-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: url('fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: url('fonts/Montserrat/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+html {
+    font-size: 62.5%;
 }
 
 .spoqaHanSans {
@@ -64,11 +79,19 @@ html {
     letter-spacing: -0.1rem;
 }
 
+.montserrat {
+    font-family: 'Montserrat';
+}
+
 .regular {
     font-weight: 400;
 }
 
-.semiBold {
+.medium {
+    font-weight: 500;
+}
+
+.semi-bold {
     font-weight: 600;
 }
 
@@ -76,20 +99,18 @@ html {
     font-weight: 700;
 }
 
-.h1-like {
+.fontsize40 {
     font-size: 4.0rem;
-    letter-spacing: -0.1rem;
 }
 
-.h2-like {
-    font-size: 2.5rem;
+.fontsize32 {
+    font-size: 3.2rem;
 }
 
-.h3-like {
-    font-size: 2.5rem;
-    letter-spacing: -0.1rem;
+.fontsize24 {
+    font-size: 2.4rem;
 }
 
-.h5-like {
-    font-size: 1.8rem;
+.fontsize20 {
+    font-size: 2.0rem;
 }
