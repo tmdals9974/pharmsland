@@ -12,6 +12,20 @@
             overflow-x: hidden;
         }
 
+        #banner {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub-container {
+            width: 1200px;
+        }
+
         .navigation-bar {
             width: 100%;
             height: 100px;
@@ -113,7 +127,7 @@
                 <div class="dropdown-content">
                     <ul>
                         <li onclick="location.href='/ceo'">CEO 인삿말</li>
-                        <li>오시는 길</li>
+                        <li onclick="location.href='/directions'">오시는 길</li>
                     </ul>
                 </div>
             </div>
@@ -122,8 +136,8 @@
                 <span class="navbar-menu">지사안내</span>
                 <div class="dropdown-content">
                     <ul>
-                        <li>충북지사</li>
-                        <li>세종지사</li>
+                        <li onclick="location.href='/branch_choongBook'">충북지사</li>
+                        <li onclick="location.href='/branch_seJong'">세종지사</li>
                     </ul>
                 </div>
             </div>
@@ -132,18 +146,19 @@
                 <span class="navbar-menu">사업영역</span>
                 <div class="dropdown-content">
                     <ul>
-                        <li>약국 컨설팅</li>
-                        <li>온라인 쇼핑몰</li>
+                        <li onclick="location.href='/distribution'">약국 유통</li>
+                        <li onclick="location.href='/oem'">OEM 생산</li>
+                        <li onclick="location.href='/store'">온라인 쇼핑몰</li>
                     </ul>
                 </div>
             </div>
 
             <div class="dropdown">
-                <span class="navbar-menu">고객센터</span>
+                <span class="navbar-menu" onclick="alert('현재 지원되지 않는 기능입니다.')">1:1 문의</span>
             </div>
 
             <div class="dropdown">
-                <span class="navbar-menu" onclick="location.href='http://epharmsland.co.kr/'">온라인쇼핑</span>
+                <span class="navbar-menu" onclick="location.href='http://shop.pharmsland.co.kr/'">온라인쇼핑</span>
             </div>
         </div>
     </nav>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팜스랜드</title>
+    <style>
+        #map {
+            margin: 100px 0;
+
+            width: 1200px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../navbar'); %>
+    <main>
+        <img id="banner" src="images/회사소개/배너_회사소개.jpg" alt="">
+        <div class="container">
+            <div class="sub-container">
+                <div id="map"> </div>
+                <img src="images/회사소개/direction_table.png" alt="" width="100%" height="auto">
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>
+    <script>
+        const pharmsGPS = new naver.maps.LatLng(36.79015038247792, 127.17208649658916);
+        var map = new naver.maps.Map('map', {
+            center: pharmsGPS,
+            zoom: 16,
+            zoomControl: true,
+        });
+
+        var marker = new naver.maps.Marker({
+            position: pharmsGPS,
+            map: map
+        });
+    </script>
+</body>
+
+</html>

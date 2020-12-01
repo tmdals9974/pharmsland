@@ -14,5 +14,29 @@ app.all('/', (req, res) => {
 });
 
 app.all('/ceo', (req, res) => {
-    res.render(path.join(__dirname, "./views/ceo.ejs"));
+    res.render(path.join(__dirname, "./views/회사소개/ceo.ejs"));
 });
+
+app.all('/directions', (req, res) => {
+    res.render(path.join(__dirname, "./views/회사소개/directions.ejs"));
+})
+
+app.all('/branch_seJong', (req, res) => {
+    res.render(path.join(__dirname, "./views/지사안내/branch_seJong.ejs"));
+})
+
+app.all('/branch_choongBook', (req, res) => {
+    res.render(path.join(__dirname, "./views/지사안내/branch_choongBook.ejs"));
+})
+
+app.all('/oem', (req, res) => {
+    res.render(path.join(__dirname, "./views/사업영역/oem.ejs"));
+})
+
+app.all('/distribution', (req, res) => {
+    res.render(path.join(__dirname, "./views/사업영역/distribution.ejs"));
+})
+
+app.all('/store', (req, res) => {
+    res.render(path.join(__dirname, "./views/사업영역/store.ejs"));
+})

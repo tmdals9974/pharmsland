@@ -12,15 +12,6 @@
             margin-right: calc(-20px);
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .sub-container {
-            width: 1200px;
-        }
-
         .quick-menu-container {
             display: flex;
             flex-flow: row wrap;
@@ -56,7 +47,7 @@
         .introduce-container>article {
             display: flex;
             flex-flow: row nowrap;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-bottom: 142px;
         }
 
@@ -70,6 +61,31 @@
             flex-flow: column nowrap;
             align-self: flex-end;
             margin-right: 25px;
+        }
+
+        .introduce-container>article>.introduce>div {
+            background-size: cover;
+            margin-bottom: 22px;
+            position: relative;
+            height: 250px;
+            min-width: 290px;
+        }
+
+        .introduce-container>article>.introduce>div>span {
+            position:absolute; 
+            bottom:0;
+        }
+
+        .introduce-container>article:first-child>.introduce>div {
+            background-image: url('images/main/01.jpg');
+        }
+
+        .introduce-container>article:nth-child(2)>.introduce>div {
+            background-image: url('images/main/02.jpg');
+        }
+
+        .introduce-container>article:last-child>.introduce>div {
+            background-image: url('images/main/03.jpg');
         }
 
         .logo-container {
@@ -131,28 +147,28 @@
 <body>
     <%- include('navbar'); %>
     <main>
-        <img src="images/main.jpg" alt="">
+        <img src="images/main/main.jpg" alt="">
 
         <div class="container">
             <div class="sub-container">
                 <section class="quick-menu-container">
                     <article>
-                        <img src="images/회사소개.svg" alt="">
+                        <img src="images/main/회사소개.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">회사 소개</span>
                         <span class="montserrat semi-bold fontsize20">Introduction</span>
                     </article>
                     <article>
-                        <img src="images/사업영역.svg" alt="">
+                        <img src="images/main/사업영역.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">사업 영역</span>
                         <span class="montserrat semi-bold fontsize20">Business Line</span>
                     </article>
                     <article>
-                        <img src="images/문의.svg" alt="">
+                        <img src="images/main/문의.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">1 : 1 문의</span>
                         <span class="montserrat semi-bold fontsize20">Q & A</span>
                     </article>
                     <article>
-                        <img src="images/온라인스토어.svg" alt="">
+                        <img src="images/main/온라인스토어.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">온라인 스토어</span>
                         <span class="montserrat semi-bold fontsize20">Online Store</span>
                     </article>
@@ -160,10 +176,11 @@
 
                 <section class="introduce-container">
                     <article>
-                        <img src="images/1.png" alt="">
+                        <img src="images/main/1.png" alt="">
                         <div class="introduce">
-                            <span class="montserrat bold fontsize40"
-                                style="margin-bottom: 22px;">Pharmacy<br>Distribution</span>
+                            <div class="montserrat bold fontsize40">
+                                <span>Pharmacy<br>Distribution</span>
+                            </div>
                             <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">약국 유통</span>
                             <span class="spoqaHanSans regular fontsize20">최고의 제품과 우수한 마케팅 능력을<br>
                                 바탕으로 의약부외품을 컨설팅 공급하는<br>
@@ -173,20 +190,23 @@
 
                     <article>
                         <div class="introduce">
-                            <span class="montserrat bold fontsize40"
-                                style="margin-bottom: 22px;">OEM<br>Production</span>
+                            <div class="montserrat bold fontsize40">
+                                <span>OEM<br>Production</span>  
+                            </div>
                             <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">OEM 생산</span>
                             <span class="spoqaHanSans regular fontsize20">고객 목소리에 귀를 귀울여 고객 니즈에<br>
                                 최적화된 경쟁력있는 최고의 제품을<br>
                                 생산하는 고객만족도 100% 팜스랜드</span>
                         </div>
-                        <img src="images/2.png" alt="">
+                        <img src="images/main/2.png" alt="">
                     </article>
 
                     <article>
-                        <img src="images/3.png" alt="">
+                        <img src="images/main/3.png" alt="">
                         <div class="introduce">
-                            <span class="montserrat bold fontsize40" style="margin-bottom: 22px;">Online Store</span>
+                            <div class="montserrat bold fontsize40">
+                                <span>Online Store</span>
+                            </div>
                             <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">온라인 스토어</span>
                             <span class="spoqaHanSans regular fontsize20">플랫폼 시대의 약국 혁신,<br>
                                 변화하는 시대에 발 맞춰가는<br>
@@ -249,7 +269,7 @@
         const pharmsGPS = new naver.maps.LatLng(36.79015038247792, 127.17208649658916);
         var map = new naver.maps.Map('map', {
             center: pharmsGPS,
-            zoom: 18,
+            zoom: 16,
             zoomControl: true,
         });
 
