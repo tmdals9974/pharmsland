@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팜스랜드</title>
+    <style>
+        .client_container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        .client_container > .client {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            width: 380px;
+            border: 2px solid lightgray;
+            margin: 30px 8px;
+        }
+
+        .client_container > .client > img {
+            width: 250px;
+            height: auto;
+        }
+
+        .client_container > .client > div {
+            border-top: 0.5px solid gainsboro;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../navbar'); %>
+    <main>
+        <img id="banner" src="images/회사소개/배너_회사소개.jpg" alt="">
+        <%- include('leftMenu', { active : 'client' }); %>
+        <div class="container">
+            <div class="sub-container">
+                <img id="title" src="images/회사소개/title_direction.jpg" alt="" width="100%" height="auto">
+                <section class="client_container semi-bold fontsize20" id="client_container">
+                </section>
+            </div>
+        </div>
+        <%- include('../emblems', { clients }); %>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const clients = <%- JSON.stringify(clients) %>;
+            for (let index=0; index < clients.length; index++) {
+                let client = clients[index];
+
+                let clientImg = document.createElement("img");
+                clientImg.src = "images/logo/" + client + ".jpg";
+                clientImg.alt = client;
+
+                let clientDiv = document.createElement("div");
+                clientDiv.innerText = client;
+
+                let clientArticle = document.createElement("article")
+                // clientArticle.classList.add('client');
+                clientArticle.classList.add('client');
+                clientArticle.appendChild(clientImg);
+                clientArticle.appendChild(clientDiv);
+
+                document.getElementById('client_container').appendChild(clientArticle);
+            }
+        });
+    </script>
+</body>
+
+</html>

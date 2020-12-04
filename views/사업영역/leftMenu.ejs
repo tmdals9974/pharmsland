@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팜스랜드</title>
+    <style>
+        .left-menu {
+            width: 200px;
+            left: 80px;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .left-menu.fixed {
+            position: fixed;
+            margin: 0;
+            top: 0;
+        }
+
+        .left-menu>.header {
+            padding: 30px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 1px solid lightgray
+        }
+
+        .left-menu>.menus>.menu {
+            border: 1px solid lightgray;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .left-menu>.menus>.menu:hover,
+        .left-menu>.menus>.menu.active {
+            font-weight: bold;
+        }
+
+        .left-menu>.menus>.menu:last-child {
+            border-bottom: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-menu spoqaHanSans" id="leftMenu">
+        <div class="header bold fontsize24">사업영역</div>
+        <div class="menus fontsize20">
+            <div class="menu<% if (active=="distribution") { %> active<% } %>" onclick="location.href='/distribution'">약국유통</div>
+            <div class="menu<% if (active=="oem") { %> active<% } %>" onclick="location.href='/oem'">OEM 생산</div>
+            <div class="menu<% if (active=="store") { %> active<% } %>" onclick="location.href='/store'">온라인 쇼핑몰</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload = function () {
+        const leftMenu = document.getElementById('leftMenu');
+        const leftMenuTop = leftMenu.offsetTop;
+        window.addEventListener('scroll', function (e) {
+            if (window.scrollY > leftMenuTop)
+                leftMenu.classList.add('fixed');
+            else
+                leftMenu.classList.remove('fixed');
+        });
+    };
+</script>

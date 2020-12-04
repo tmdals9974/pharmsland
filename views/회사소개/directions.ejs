@@ -7,8 +7,7 @@
     <title>팜스랜드</title>
     <style>
         #map {
-            margin: 100px 0;
-
+            margin-bottom: 100px;
             width: 1200px;
             height: 500px;
         }
@@ -19,12 +18,15 @@
     <%- include('../navbar'); %>
     <main>
         <img id="banner" src="images/회사소개/배너_회사소개.jpg" alt="">
+        <%- include('leftMenu', { active : 'directions' }); %>
         <div class="container">
             <div class="sub-container">
+                <img id="title" src="images/회사소개/title_direction.jpg" alt="" width="100%" height="auto">
                 <div id="map"> </div>
                 <img src="images/회사소개/direction_table.png" alt="" width="100%" height="auto">
             </div>
         </div>
+        <%- include('../emblems', { clients }); %>
     </main>
 
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>

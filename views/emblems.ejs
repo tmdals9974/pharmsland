@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팜스랜드</title>
+    <style>
+        .logo-container {
+            -ms-user-select: none;
+            -moz-user-select: -moz-none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+
+        .logo-container>img {
+            width: 240px;
+            margin-right: 31px;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 6px;
+            margin-bottom: 80px;
+            cursor: pointer;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sub-container" style="margin-top: 70px;">
+            <section class="logo-container">
+                <i class="arrow left" onclick="move(-1)"></i>
+                <img name="logos" src="" alt="">
+                <img name="logos" src="" alt="">
+                <img name="logos" src="" alt="">
+                <img name="logos" src="" alt="">
+                <i class="arrow right" onclick="move(1)"></i>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const logos = document.getElementsByName('logos');
+        const logoLength = logos.length;
+        const companys = <%- JSON.stringify(clients) %>;
+        let now = 0;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let index = 0; index < logoLength; index++) {
+                logos[index].src = 'images/logo/' + companys[index] + '.jpg';
+            }
+        });
+
+        function move(step) {
+            if (now + step < 0 || (now + step + logoLength) == companys.length + 1) return;
+            now += step;
+
+            for (let index = 0; index < logoLength; index++) {
+                logos[index].src = 'images/logo/' + companys[index + now] + '.jpg';
+            }
+        }
+    </script>
+</body>
+</html>

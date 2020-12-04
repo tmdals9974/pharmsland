@@ -10,7 +10,6 @@
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
-            margin-top: 100px;
         }
 
         .greeting-main {
@@ -20,10 +19,6 @@
             text-align: center;
             line-height: 2;
         }
-
-        .greeting {
-            margin-bottom: 70px;
-        }
     </style>
 </head>
 
@@ -31,8 +26,10 @@
     <%- include('../navbar'); %>
     <main>
         <img id="banner" src="images/회사소개/배너_회사소개.jpg" alt="">
+        <%- include('leftMenu', { active : 'ceo' }); %>
         <div class="container">
             <div class="sub-container">
+                <img id="title" src="images/회사소개/title_ceo.jpg" alt="" width="100%" height="auto">
                 <div class="greeting-container">
                     <div class="greeting-main spoqaHanSans">
                         <span class="bold fontsize40" style="border-bottom: 3px solid black;">CEO 인사말</span>
@@ -63,7 +60,7 @@
                 </div>
             </div>
         </div>
-        </div>
+        <%- include('../emblems', { clients }); %>
     </main>
 </body>
 

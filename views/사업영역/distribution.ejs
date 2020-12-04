@@ -9,11 +9,13 @@
     <%- include('../navbar'); %>
     <main>
         <img id="banner" src="images/사업영역/배너_사업영역.jpg" alt="">
+        <%- include('leftMenu', { active : 'distribution' }); %>
         <div class="container">
             <div class="sub-container">
-                <img src="images/사업영역/distribution.jpg" alt="" width="100%" height="auto" style="margin-top: 100px;">
+                <img src="images/사업영역/distribution.jpg" alt="" width="100%" height="auto">
             </div>
         </div>
+        <%- include('../emblems', { clients }); %>
     </main>
 </body>
 </html>

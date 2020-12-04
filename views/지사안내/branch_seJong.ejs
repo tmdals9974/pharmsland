@@ -6,8 +6,6 @@
     <title>팜스랜드</title>
     <style>
         #map {
-            margin: 100px 0;
-
             width: 1200px;
             height: 500px;
         }
@@ -17,27 +15,32 @@
     <%- include('../navbar'); %>
     <main>
         <img id="banner" src="images/지사안내/배너_지사안내.jpg" alt="">
+        <%- include('leftMenu', { active : 'seJong' }); %>
         <div class="container">
             <div class="sub-container">
-                <img src="images/지사안내/세종지사.png" alt="" width="100%" height="auto" style="margin-top: 100px;">
+                <img id="title" src="images/지사안내/title_sejong.jpg" alt="" width="100%" height="auto">
+                <img src="images/지사안내/세종지사.jpg" alt="" width="100%" height="auto">
+                <img src="images/지사안내/오시는길.jpg" alt="" width="auto" height="50px" style="margin-top: 100px;">
                 <div id="map"></div>
             </div>
         </div>
+        <%- include('../emblems', { clients }); %>
 
-        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>
-        <script>
-            const pharmsGPS = new naver.maps.LatLng(36.614081898442215, 127.29122076857035);
-            var map = new naver.maps.Map('map', {
-                center: pharmsGPS,
-                zoom: 16,
-                zoomControl: true,
-            });
-    
-            var marker = new naver.maps.Marker({
-                position: pharmsGPS,
-                map: map
-            });
-        </script>
     </main>
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>
+    <script>
+        const pharmsGPS = new naver.maps.LatLng(36.614081898442215, 127.29122076857035);
+        var map = new naver.maps.Map('map', {
+            center: pharmsGPS,
+            zoom: 16,
+            zoomControl: true,
+        });
+
+        var marker = new naver.maps.Marker({
+            position: pharmsGPS,
+            map: map
+        });
+    </script>
 </body>
 </html>

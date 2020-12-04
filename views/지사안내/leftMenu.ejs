@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팜스랜드</title>
+    <style>
+        .left-menu {
+            width: 200px;
+            left: 80px;
+            position: absolute;
+            margin-top: 100px;
+        }
+
+        .left-menu.fixed {
+            position: fixed;
+            margin: 0;
+            top: 0;
+        }
+
+        .left-menu>.header {
+            padding: 30px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 1px solid lightgray
+        }
+
+        .left-menu>.menus>.menu {
+            border: 1px solid lightgray;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .left-menu>.menus>.menu:hover,
+        .left-menu>.menus>.menu.active {
+            font-weight: bold;
+        }
+
+        .left-menu>.menus>.menu:last-child {
+            border-bottom: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-menu spoqaHanSans" id="leftMenu">
+        <div class="header bold fontsize24">지사안내</div>
+        <div class="menus fontsize20">
+            <div class="menu<% if (active=="choongBook") { %> active<% } %>" onclick="location.href='/branch_choongBook'">충북지사</div>
+            <div class="menu<% if (active=="seJong") { %> active<% } %>" onclick="location.href='/branch_seJong'">세종지사</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload = function () {
+        const leftMenu = document.getElementById('leftMenu');
+        const leftMenuTop = leftMenu.offsetTop;
+        window.addEventListener('scroll', function (e) {
+            if (window.scrollY > leftMenuTop)
+                leftMenu.classList.add('fixed');
+            else
+                leftMenu.classList.remove('fixed');
+        });
+    };
+</script>

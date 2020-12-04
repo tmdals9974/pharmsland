@@ -6,23 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팜스랜드</title>
     <style>
-        main>img {
-            width: calc(100% + 40px);
-            margin-left: calc(-20px);
-            margin-right: calc(-20px);
+        .slide * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide ul,
+        li {
+            list-style: none;
+        }
+
+        .slide {
+            height: 705px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide ul {
+            width: calc(100% * 4);
+            display: flex;
+            transition: 1s;
+        }
+
+        .slide li {
+            width: calc(100% / 4);
+            height: 705px;
+        }
+
+        .slide li:nth-child(1) {
+            background-image: url('images/main/main.jpg');
+        }
+
+        .slide li:nth-child(2) {
+            background-image: url('images/main/main2.jpg');
+        }
+
+        .slide input {
+            display: none;
+        }
+
+        .slide .bullet {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .slide .bullet label {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 2px solid #666;
+            display: inline-block;
+            background: #fff;
+            font-size: 0;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        #pos1:checked~ul {
+            margin-left: 0;
+        }
+
+        #pos2:checked~ul {
+            margin-left: -100%;
+        }
+
+        #pos1:checked~.bullet label:nth-child(1),
+        #pos2:checked~.bullet label:nth-child(2) {
+            background: #666;
         }
 
         .quick-menu-container {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-            margin: 99px 0;
+            margin-bottom: 99px;
         }
 
         .quick-menu-container>article {
             width: 269px;
             height: 207px;
             background-color: #4d4d4d;
+            cursor: pointer;
 
             display: flex;
             flex-flow: column nowrap;
@@ -72,8 +140,8 @@
         }
 
         .introduce-container>article>.introduce>div>span {
-            position:absolute; 
-            bottom:0;
+            position: absolute;
+            bottom: 0;
         }
 
         .introduce-container>article:first-child>.introduce>div {
@@ -86,38 +154,6 @@
 
         .introduce-container>article:last-child>.introduce>div {
             background-image: url('images/main/03.jpg');
-        }
-
-        .logo-container {
-            -ms-user-select: none;
-            -moz-user-select: -moz-none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            user-select: none;
-        }
-
-        .logo-container>img {
-            width: 240px;
-            margin-right: 31px;
-        }
-
-        .arrow {
-            border: solid black;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 6px;
-            margin-bottom: 80px;
-            cursor: pointer;
-        }
-
-        .right {
-            transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-        }
-
-        .left {
-            transform: rotate(135deg);
-            -webkit-transform: rotate(135deg);
         }
 
         .map-container {
@@ -147,27 +183,39 @@
 <body>
     <%- include('navbar'); %>
     <main>
-        <img src="images/main/main.jpg" alt="">
+        <div class="slide">
+            <input type="radio" name="pos" id="pos1" checked>
+            <input type="radio" name="pos" id="pos2">
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+            <p class="bullet">
+                <label for="pos1">1</label>
+                <label for="pos2">2</label>
+            </p>
+        </div>
+        <!-- <img src="images/main/main.jpg" alt=""> -->
 
         <div class="container">
             <div class="sub-container">
                 <section class="quick-menu-container">
-                    <article>
+                    <article onclick="location.href='/ceo'">
                         <img src="images/main/회사소개.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">회사 소개</span>
                         <span class="montserrat semi-bold fontsize20">Introduction</span>
                     </article>
-                    <article>
+                    <article onclick="location.href='/distribution'">
                         <img src="images/main/사업영역.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">사업 영역</span>
                         <span class="montserrat semi-bold fontsize20">Business Line</span>
                     </article>
-                    <article>
+                    <article onclick="alert('현재 지원되지 않는 기능입니다.')">
                         <img src="images/main/문의.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">1 : 1 문의</span>
                         <span class="montserrat semi-bold fontsize20">Q & A</span>
                     </article>
-                    <article>
+                    <article onclick="location.href='http://shop.pharmsland.co.kr/'">
                         <img src="images/main/온라인스토어.svg" alt="">
                         <span class="spoqaHanSans bold fontsize24">온라인 스토어</span>
                         <span class="montserrat semi-bold fontsize20">Online Store</span>
@@ -191,7 +239,7 @@
                     <article>
                         <div class="introduce">
                             <div class="montserrat bold fontsize40">
-                                <span>OEM<br>Production</span>  
+                                <span>OEM<br>Production</span>
                             </div>
                             <span class="spoqaHanSans bold fontsize24" style="margin-bottom: 10px;">OEM 생산</span>
                             <span class="spoqaHanSans regular fontsize20">고객 목소리에 귀를 귀울여 고객 니즈에<br>
@@ -228,42 +276,20 @@
             </div>
         </section>
 
-        <div class="container">
-            <div class="sub-container">
-                <section class="logo-container">
-                    <i class="arrow left" onclick="move(-1)"></i>
-                    <img name="logos" src="" alt="">
-                    <img name="logos" src="" alt="">
-                    <img name="logos" src="" alt="">
-                    <img name="logos" src="" alt="">
-                    <i class="arrow right" onclick="move(1)"></i>
-                </section>
-            </div>
-        </div>
+        <%- include('emblems', { clients }); %>
     </main>
 
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5r4jtvbejn">
+    </script>
     <script>
-        const logos = document.getElementsByName('logos');
-        const logoLength = logos.length;
-        const companys = ['3life', 'green', 'kirin', 'nasara', 'oralB', 'sewha', 'taeyang', 'taylor', 'wellbeing',
-            'wellbeing2'
-        ]
-        let now = 0;
-
         document.addEventListener("DOMContentLoaded", function () {
-            for (let index = 0; index < logoLength; index++) {
-                logos[index].src = 'images/logo/' + companys[index] + '.jpg';
-            }
+            setInterval(slide, 3000);
         });
 
-        function move(step) {
-            if (now + step < 0 || (now + step + logoLength) == companys.length + 1) return;
-            now += step;
-
-            for (let index = 0; index < logoLength; index++) {
-                logos[index].src = 'images/logo/' + companys[index + now] + '.jpg';
-            }
+        function slide() {
+            const targetRadio = document.getElementById('pos1').checked ? document.getElementById('pos2') : document
+                .getElementById('pos1');
+            targetRadio.checked = true;
         }
 
         const pharmsGPS = new naver.maps.LatLng(36.79015038247792, 127.17208649658916);
