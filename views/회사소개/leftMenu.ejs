@@ -60,7 +60,8 @@
         const leftMenu = document.getElementById('leftMenu');
         const leftMenuTop = leftMenu.offsetTop;
         window.addEventListener('scroll', function (e) {
-            if (window.scrollY > leftMenuTop)
+            const windowScroll = window.scrollY || window.pageYOffset;
+            if (windowScroll > leftMenuTop)
                 leftMenu.classList.add('fixed');
             else
                 leftMenu.classList.remove('fixed');
